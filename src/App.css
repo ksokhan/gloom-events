@@ -1,6 +1,10 @@
 .App {
   color: #222;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-viewer {
@@ -11,11 +15,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  flex: 1;
 }
 
 .App-home > div {
   margin: 0 4px 0;
+  text-align: center;
+}
+
+.title {
+  color: #333;
   text-align: center;
 }
 
@@ -24,14 +33,15 @@
   background: url(./city.jpg) top left no-repeat;
   background-size: cover;
   width: 145px;
-  height: 167px;
+  height: 180px;
   color: white;
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 26px;
   text-align: center;
   padding: 70px 20px 0;
   box-sizing: border-box;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.18)
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .card-button-road {
@@ -80,7 +90,7 @@
   height: 450px;
   margin: 12px auto 22px;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.18)
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .card:focus {
@@ -88,7 +98,8 @@
   outline: none;
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   width: 300px;
   display: block;
   position: absolute;

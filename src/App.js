@@ -139,7 +139,7 @@ class App extends Component {
 
   render() {
     if (this.state.editingCards) {
-      this.renderEditingCards();
+      return this.renderEditingCards();
     }
 
     if (this.state.viewingCard) {
@@ -163,30 +163,33 @@ class App extends Component {
       );
     }
     return (
-      <div className="App App-home">
-        <div>
-          <div className="card-button" onClick={() => this.drawCard('city')}>
-            Draw a City Event
+      <div className="App">
+        <h2 className="title">Gloomhaven Events</h2>
+        <div className="App-home">
+          <div>
+            <div className="card-button" onClick={() => this.drawCard('city')}>
+              City Event
+            </div>
+            <div
+              className="button button-secondary"
+              onClick={() => this.setState({ editingCards: 'city' })}
+            >
+              Edit events ({this.state.city.length})
+            </div>
           </div>
-          <div
-            className="button button-secondary"
-            onClick={() => this.setState({ editingCards: 'city' })}
-          >
-            Edit events ({this.state.city.length})
-          </div>
-        </div>
-        <div>
-          <div
-            className="card-button card-button-road"
-            onClick={() => this.drawCard('road')}
-          >
-            Draw a Road Event
-          </div>
-          <div
-            className="button button-secondary"
-            onClick={() => this.setState({ editingCards: 'road' })}
-          >
-            Edit events ({this.state.road.length})
+          <div>
+            <div
+              className="card-button card-button-road"
+              onClick={() => this.drawCard('road')}
+            >
+              Road Event
+            </div>
+            <div
+              className="button button-secondary"
+              onClick={() => this.setState({ editingCards: 'road' })}
+            >
+              Edit events ({this.state.road.length})
+            </div>
           </div>
         </div>
       </div>
