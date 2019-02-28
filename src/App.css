@@ -1,9 +1,20 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+}
+
 .App {
   color: #222;
   padding-bottom: 30px;
-  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 
@@ -70,6 +81,14 @@
   height: 50px;
 }
 
+.button-outline {
+  background: none;
+  color: #999;
+  font-weight: normal;
+  line-height: 42px;
+  height: 42px;
+}
+
 .button-floating {
   position: fixed;
   bottom: 0;
@@ -82,7 +101,7 @@
 }
 
 .card {
-  border-radius: 8px;
+  border-radius: 14px;
   position: relative;
   transition: transform 0.7s;
   transform-style: preserve-3d;
@@ -104,11 +123,12 @@
   display: block;
   position: absolute;
   backface-visibility: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .card-back {
   transform: rotateY(180deg);
+  outline: none;
 }
 
 .event-listitem {
@@ -130,4 +150,51 @@
   position: relative;
   top: 4px;
   margin-right: 4px;
+}
+
+.dropdown-wrapper {
+  margin: 24px 20px 0;
+  display: block;
+  user-select: none;
+  position: relative;
+}
+
+.dropdown-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  box-sizing: border-box;
+  height: 7px;
+  width: 7px;
+  border-style: solid;
+  border-color: #111;
+  border-width: 0 1px 1px 0;
+  transform: translateY(-60%) rotate(45deg);
+}
+
+.dropdown {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  height: 48px;
+  background: #f6f6f6;
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-indent: 16px;
+  color: #222;
+  cursor: pointer;
+}
+
+.dropdown:hover {
+  background: #efefef;
+}
+
+.dropdown:focus {
+  border: solid 1px #ccc;
+  outline: none;
 }
