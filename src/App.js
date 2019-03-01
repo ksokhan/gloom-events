@@ -152,7 +152,7 @@ class App extends Component {
     })
 
     return (
-      <div className="App">
+      <div className="App App-edit-cards">
         {cardList}
         <div
           className="button button-floating"

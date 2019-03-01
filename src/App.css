@@ -18,6 +18,10 @@ body,
   flex-direction: column;
 }
 
+.App-edit-cards {
+  display: block;
+}
+
 .App-viewer {
   perspective: 1400px;
 }
