@@ -136,8 +136,8 @@ class App extends Component {
   }
 
   renderEditingCards() {
-    const cardList = cards[this.state.editingCards].map(card => {
-      const type = this.state.editingCards
+    const type = this.state.editingCards
+    const cardList = cards[type].map((card, index) => {
       const checked = this.state[type].indexOf(card.id) !== -1
       return (
         <label className="event-listitem" key={card.id}>
@@ -153,7 +153,7 @@ class App extends Component {
 
     return (
       <div className="App App-edit-cards">
-        {cardList}
+        <div className="App-edit-cards-list">{cardList}</div>
         <div
           className="button button-floating"
           onClick={() => this.setState({ editingCards: null })}

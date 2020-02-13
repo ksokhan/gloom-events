@@ -22,6 +22,10 @@ body,
   display: block;
 }
 
+.App-edit-cards-list {
+  padding-bottom: 60px;
+}
+
 .App-viewer {
   perspective: 1400px;
 }
